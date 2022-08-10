@@ -1,0 +1,10 @@
+#new_message_area {
+    width: 30%;
+    height: 20%;
+}
+
+#chat_window {
+    overflow-y: scroll;
+    width: 30%;
+    height: 50%;
+}

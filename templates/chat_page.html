@@ -2,12 +2,26 @@
 
 {% block head %}
 	<title>Chat</title>
+	<script src="../static/js/chat_page.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
 {% endblock %}
 
 {% block body %}
 <div id="content">
 
-	<p>Chat Page</p>
+	<p>Your Profile! - Chat App Logged in as {{username}}, <a href="/logout/">click here to logout</a></p>
+	<h2>User: {{username}}</h2>
+	<label for="new_message_area">Type your message here:</label>
+	<br>
+	<textarea name="new_message_area" id="new_message_area" maxlength="200"></textarea>
+	<br>
+	<button onclick="send_message(window.location.href.split('/')[4])">Send</button>
+	<br>
+	<br>
+	<br>
+	<textarea readonly name="chat_window" id="chat_window"></textarea>
+
+	<script type="text/javascript"> main() </script>
 	
 </div>
 {% endblock %}
