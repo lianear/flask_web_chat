@@ -70,6 +70,11 @@ def register_controller():
         r_pw_1 = request.form['register_pw_1']
         r_pw_2 = request.form['register_pw_2']
         
+        results = db.session.query(User).filter(User.username == r_username).all()
+        if len(results) != 0:
+            app.logger.error("Register Failed: Username Taken!")
+            return render_template("register.html")
+
         if r_pw_1 != r_pw_2:
             app.logger.error("Register Failed: Passwords Did Not Match!")
             return render_template("register.html")

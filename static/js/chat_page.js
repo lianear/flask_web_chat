@@ -35,6 +35,6 @@ const get_messages = () => {
 
 const main = () => {
     get_messages();
-    window.setInterval(get_messages, 5000);
+    window.setInterval(get_messages, 15000);
 }
 
